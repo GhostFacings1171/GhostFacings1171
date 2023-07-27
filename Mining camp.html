@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minesweeper</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minesweeper</h1>
+    <table id="board"></table>
+
+    <script>
+        // Size of the game board
+        var rows = 8;
+        var cols = 8;
+
+        // Number of mines
+        var numMines = 10;
+
+        // Create the game board
+        var board = [];
+        for (var i = 0; i < rows; i++) {
+            var row = [];
+            for (var j = 0; j < cols; j++) {
+                row.push({ mine: false, revealed: false });
+            }
+            board.push(row);
+        }
+
+        // Place the mines randomly
+        var count = 0;
+        while (count < numMines) {
+            var row = Math.floor(Math.random() * rows);
+            var col = Math.floor(Math.random() * cols);
+            if (!board[row][col].mine) {
+                board[row][col].mine = true;
+                count++;
+            }
+        }
+
+        // Function to reveal a cell
+        function revealCell(row, col) {
+            var cell = board[row][col];
+            if (cell.revealed) {
+                return;
+            }
+            cell.revealed = true;
+
+            // Check if the cell contains a mine
+            if (cell.mine) {
+                alert("Game Over!");
+                return;
+            }
+
+            // Count the number of adjacent mines
+            var count = 0;
+            for (var i = Math.max(row - 1, 0); i <= Math.min(row + 1, rows - 1); i++) {
+                for (var j = Math.max(col - 1, 0); j <= Math.min(col + 1, cols - 1); j++) {
+                    if (board[i][j].mine) {
+                        count++;
+                    }
+                }
+            }
+
+            // Update the cell content
+            var cellElement = document.getElementById("cell_" + row + "_" + col);
+            cellElement.innerHTML = count;
+
+            // Check if the player won
+            var numRevealed = 0;
+            for (var i = 0; i < rows; i++) {
+                for (var j = 0; j < cols; j++) {
+                    if (board[i][j].revealed) {
+                        numRevealed++;
+                    }
+                }
+            }
+            if (numRevealed === rows * cols - numMines) {
+                alert("Congratulations! You won!");
+            }
+        }
+
+        // Create the game board table
+        var table = document.getElementById("board");
+        for (var i = 0; i < rows; i++) {
+            var row = document.createElement("tr");
+            for (var j = 0; j < cols; j++) {
+                var cell = document.createElement("td");
+                cell.setAttribute("id", "cell_" + i + "_" + j);
+                cell.addEventListener("click", function (event) {
+                    var id = event.target.getAttribute("id").split("_");
+                    var row = parseInt(id[1]);
+                    var col = parseInt(id[2]);
+                    revealCell(row, col);
+                });
+                row.appendChild(cell);
+            }
+            table.appendChild(row);
+        }
+    </script>
+</body>
+</html>
