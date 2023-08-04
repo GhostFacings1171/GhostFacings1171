@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatos</title>
+  <style>
+    /* Estilos básicos para melhorar a aparência */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 5px; /* Reduzindo a altura do footer */
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    form {
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    textarea {
+      resize: vertical;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    /* Estilos para o botão "Aceitar" */
+    .btn-aceitar {
+      background-color: #008CBA;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    .btn-aceitar:hover {
+      background-color: #005f70;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Estufas à Venda</h1>
+  </header>
+  <div class="container">
+    <h2>Conheça nossos modelos de estufas</h2>
+    <p>
+      Bem-vindo à nossa empresa! Oferecemos uma ampla variedade de estufas para suas necessidades de cultivo.
+      Nossos modelos são projetados para atender aos mais altos padrões de qualidade e eficiência.
+      Explore nossa seleção abaixo e entre em contato para mais informações.
+    </p>
+
+    <h3>Modelos Disponíveis</h3>
+    <ul>
+      <li>Estufa para Hortaliças</li>
+      <li>Estufa para Flores</li>
+      <li>Estufa para Plantas Tropicais</li>
+      <!-- Adicione mais modelos, se necessário -->
+    </ul>
+
+    <h3>Informações de Contato</h3>
+    <p>
+      Para obter mais informações sobre nossos produtos e fazer um pedido, entre em contato conosco:
+    </p>
+    <ul>
+      <li>Email: contato@empresaestufas.com</li>
+      <li>Telefone: (11) 1234-5678</li>
+      <li>Endereço: Rua das Estufas, 123 - Cidade, Estado</li>
+    </ul>
+
+    <h3>Formulário de Contato</h3>
+    <p>
+      Se preferir, preencha o formulário abaixo e entraremos em contato com você:
+    </p>
+    <form action="enviar_email.php" method="post">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+      <input type="submit" value="Enviar">
+    </form>
+
+    <!-- Botão "Contatar" para enviar o formulário -->
+    <button class="btn-aceitar" onclick="contatar()">Contatar</button>
+  </div>
+  <footer>
+    <p>© 2023 Empresa ABC. Todos os direitos reservados.</p>
+  </footer>
+  <a href="file:///C:/Users/rgsch/OneDrive/Documentos/trabalhos/PESQ/estufapesq.html" style="position: fixed; top: 20px; left: 20px; background-color: #333; color: #fff; padding: 10px; text-decoration: none;">Voltar</a>
+  <!-- Script para exibir uma mensagem ao clicar em "Contatar" -->
+  <script>
+    function enviarFormulario() {
+      alert('Obrigado por aceitar entrar em contato conosco! Aguarde nosso retorno em breve.');
+    }
+
+    // Capturando o formulário
+    const form = document.querySelector('form');
+
+    // Adicionando um evento ao formulário para executar a função quando o botão "Enviar" for clicado
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Impede que o formulário seja enviado normalmente
+
+      // Aqui você pode adicionar o código para enviar o formulário para o servidor
+      // ...
+
+      enviarFormulario(); // Exibe o pop-up de agradecimento
+      form.reset(); // Limpa os campos do formulário
+    });
+  </script>
+</body>
+</html>
