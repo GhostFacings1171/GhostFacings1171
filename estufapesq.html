@@ -120,26 +120,220 @@
     margin: 300px; /* Espaçamento horizontal entre do texto */
     text-align: center;
     
-        } 
+        }
+        
+        
+        .button {
+  width: 110px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  background-color: rgb(161, 255, 20);
+  border-radius: 30px;
+  color: rgb(19, 19, 19);
+  font-weight: 600;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: .2s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+  padding-left: 8px;
+  transition-duration: .5s;
+}
+
+.svgIcon {
+  height: 25px;
+  transition-duration: 1.5s;
+}
+
+.bell path {
+  fill: rgb(19, 19, 19);
+}
+
+.button:hover {
+  background-color: rgb(192, 255, 20);
+  transition-duration: .5s;
+}
+
+.button:active {
+  transform: scale(0.97);
+  transition-duration: .2s;
+}
+
+.button:hover .svgIcon {
+  transform: rotate(250deg);
+  transition-duration: 1.5s;
+}
+
+.btn-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+
+.btn-cart::after {
+  content: attr(data-quantity);
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  font-size: 15px;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s linear;
+  top: 115%;
+}
+
+.icon-cart {
+  width: 24.38px;
+  height: 30.52px;
+  transition: .2s linear;
+}
+
+.icon-cart path {
+  fill: rgb(240, 8, 8);
+  transition: .2s linear;
+}
+
+.btn-cart:hover > .icon-cart {
+  transform: scale(1.2);
+}
+
+.btn-cart:hover > .icon-cart path {
+  fill: rgb(186, 34, 233);
+}
+
+.btn-cart:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: 105%;
+}
+
+.quantity {
+  display: none;
+}
+
+
+
+
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(5, 65, 65);
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+}
+
+.sign svg path {
+  fill: white;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: .3s;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px ,2px);
+}
+
+
   </style>
 </head>
 <body>
   <header id="header">
     <a href="file:///C:/Users/rgsch/OneDrive/Documentos/trabalhos/Campo%20Minado.html">
-      <img id="logo" src="https://lh3.googleusercontent.com/pw/AIL4fc_P-KFUwgGQy01cpl4NALBoPRzphbrTqsIEKJD-1xbrY838om7r_gQriwOV9V3XblYd_xdu9OCmE1KcvlmsugUm7mf9nzoV0ttJrrrwnRp14hEoMNM5DwZOvc7FxoTNv783O1ZLbsV_Lc2rWuvKixjJqsJgg5-HHyiKizEh90U3LfsccqSihLqhkkoydYG5eiZ1pDVQdzOR6K89tzeV1ytZ1Mf4sRgV82ogVA0eURVDG3x5c2axp3mQvHls3C_c7m8eCj92YJyAmGRWOMN7md8qXCwawF5Uk1BQ6p2mEmXOtjApgpgraMOYmvjlnqZ7KTzsHpPUUxuZTgLfGbzxIW5UyjLEYU16EYsebDJ9Z5Ibr5lt-SjR4EHJmaeWzgYw6ItKPKgsf6WqF-Fa3SQnGpPcsI-JMqCuHlBThPWQjrnNJPdmICKM5uuaSsbze2vpzyo2KgqbEazoXiR-o7m70JcQ5UwcTUAlUms78QyTtqdrEjK6x6jPVR9CX91H8XwT5ezJwR4oH6VrhJIdI-Jp24az4pLhNL1KXk_8D8690f7KOX3M2566h82qwO7pfMMcccb6nBijyx9pgAS5Ft6VOlzYxH51MtM0_k4yUoDrUA8h9UPbOjoaX6MF2wytXqjHT3K_4FBol_IyR8Ol66b-LrGtIh-lHroJr-mXq--Zg_quTzgI7Q2hebkZdkNnV6mqm6RzlXzJw21a3gcTkWELXHQ6QtQl6skJ-npqKHRHcmTNGFAaKOfFyM4FRM1-bjoupi8921prjgfLj1nh5PbJWWZXa_XRJ58gcqufsgRuFGK7R2N2DYCMdkqRFSpJmq-LSIvJhhdLLGpf1yMto1T3_7tLTLh_KMXHuUs35T1h_VAB0zPCQM7RjITwh7s5Zzn-DzAKTpScexTKJBTcM2q_qGZIStEKNZf0U_EagTZusNEC7QrJY-0RmHkqCYwbRw=w819-h841-s-no?authuser=0" alt="Logo">
+      <img id="logo" src="C:\Users\rgsch\OneDrive\Documentos\trabalhos\PESQ\Logo.jpg" alt="Logo">
     </a>
+    
+    <button class="button">
+      <svg class="svgIcon" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg>
+     Produtos
+   </button>
+
+   <button data-quantity="0" class="btn-cart">
+    <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">
+      <title>icon-cart</title>
+      <path transform="translate(-3.62 -0.85)" d="M28,27.3,26.24,7.51a.75.75,0,0,0-.76-.69h-3.7a6,6,0,0,0-12,0H6.13a.76.76,0,0,0-.76.69L3.62,27.3v.07a4.29,4.29,0,0,0,4.52,4H23.48a4.29,4.29,0,0,0,4.52-4ZM15.81,2.37a4.47,4.47,0,0,1,4.46,4.45H11.35a4.47,4.47,0,0,1,4.46-4.45Zm7.67,27.48H8.13a2.79,2.79,0,0,1-3-2.45L6.83,8.34h3V11a.76.76,0,0,0,1.52,0V8.34h8.92V11a.76.76,0,0,0,1.52,0V8.34h3L26.48,27.4a2.79,2.79,0,0,1-3,2.44Zm0,0"></path>
+    </svg>
+    <span class="quantity"></span>
+  </button>
+   
      <nav id="navigation">
 <div style="text-align: center;"
      class="menu">
-      <a href="#how-we-work" style="font-size: 20px;">Nosso trabalho</a>
-      <a href="#products"style="font-size: 20px;">Produtos</a>
-      <a href="#shopping-cart"style="font-size: 20px;">Carrinho</a>
       </div>
     </nav>
   </header>
-  <a href="file:///C:/Users/rgsch/OneDrive/Documentos/trabalhos/PESQ/login.html">
-    <img id="perfil" src="https://lh3.googleusercontent.com/pw/AIL4fc9KMYJD3w51JpxbUe3Le4Qd0Wsx7TI116CHGPLjcgPXENABFeOzDkughYMa_cnzbCB_RNPcBWSNNHuBGYxHAZg_ReUbgUxuBIekGaPlI9HIzwHOypc7V8EhDuBfX0oL0l2Wk7DPKPa934jjcDbql8mODTuLeg7-WXs5KoGxRR3HdtZDU7eWTEJNuFen3-bpJo3fta_Z1LygCZzqaTLw7Y52TmJR6O1asPQaFB83qq2c1o4B_pH8yr9VgOSbiwbMPnA8IS6OCQGeqATwdMLrbKygTX4cC0r3oZFUBNlyUyoPKGSwnMVoknsD6Vr3T22OXUOkQ18-cw1rAOhBnApyjtbJj7S_ObVLWdDNF217iUDZOqbp-aLNhHBO2D3IdZ6BSUFMCHrNFohc6vULOdKdqIr6KucKopFirkTXi8-8QjqxeN-x2PSL19DqQ_IoyR4yAGh6uF6wLzg6dXXrBSzFDIYM47Nta4MG7B8oI047hi91nuHt9QV2TGmrJ5xOV-Cgt2uQwn52CF3oI3Br4PTxHLUWBYWgmP7Ena45RgJh62ToAEht26NrgUbDME6Yaz4Nnt-y8q44Ls0qjUhJnoDL4aYd10eNLScwV-eU_c2chSdyZ3jf5adxEyP24T3ofOOY_i48eotqmE3i5vY0bR3RQ4CkqQvhDQ1B-f887sEnWX48xRiv3AQeZjowLS-iGf0Fs80d-eFh8P343vseJ5x41kc_Cr_zJL4LqPDJ_TjhmYAEP1ZYWhhZ2cFvLaqwjKgTZaOkyQUftJgUK7oyj-ozqDS4RTxSnCezBFoEgc7IXa8x-guw5dP2wxK89eoSarui-47OEBtc-aco0lBJbArBbj4loRuzPNk2MXiVE6n_eS6eqPEoGluQGMPl0X6tF6kFMtc2ktl4ERIr2ZQauvQ3nK7n_39FIgISD5fFVHOS75mtOxgb6gAPj82VV7WzDg=w556-h531-s-no?authuser=0" alt="perfil">
-  </a>
+
+<a href="C:\Users\rgsch\OneDrive\Documentos\trabalhos\PESQ\login.html">
+  <button class="Btn">
+  
+    <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+    
+    <div class="text">Login</div>
+  </button>
+</a>
+  
+    
+  
+  
   <footer>
     <p>© 2023 Empresa ABC. Todos os direitos reservados.</p>
     <ul>
