@@ -1,8 +1,8 @@
 - 👋 Hi, I’m @GhostFacings1171/@Akinori
 - 👀 I’m interested in Video games, Animes, programing, art and design
-- 🌱 I’m currently learning phyton, html and java script
+- 🌱 I’m currently learning C++ and Ruby
 - 📫 How to reach me:
-Instagram: Akinori5184;
+Instagram: rafael.g.schumacher;
 Discord:akinori5184;
 Steam: Akinori5184;
 X(Twitter): Akinori5184
